@@ -6,10 +6,8 @@
 </p>
 
 ## Live version of the production
-```
-$ https://tashfeenrao.github.io/tic-tac-toe-React/
 
-```
+$ https://tashfeenrao.github.io/tic-tac-toe-React/
 
 ### Feature Currently available:
 
