@@ -5,8 +5,11 @@
     <img src="final.png">
 </p>
 
-## Live version of the production comming soon
+## Live version of the production
+```
+$ https://tashfeenrao.github.io/tic-tac-toe-React/
 
+```
 
 ### Feature Currently available:
 
