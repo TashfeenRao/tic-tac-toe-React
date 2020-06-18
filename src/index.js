@@ -16,7 +16,7 @@ const Square = (props) => {
     renderSquare(i) {
       return <Square 
       value={ this.props.squares[i] } 
-      onClick = {() => this.props.handleClick(i)}/>;
+      onClick = {() => this.props.onClick(i)}/>;
     }
   
     render() {
@@ -54,7 +54,7 @@ const Square = (props) => {
       }
     }
     handleClick = (i) => {
-      const history = this.state.history;
+      const history = this.state.history.slice(0, this.state.stepNumber + 1);
       const current = history[history.length - 1];
       const squares = current.squares.slice();
       if (calculateWinner(squares) || squares[i]) {
@@ -65,6 +65,7 @@ const Square = (props) => {
         history: history.concat([{
           squares: squares,
         }]),
+        stepNumber: history.length,
         xIsNext: !this.state.xIsNext})
     }
     jumpTo = (step) => {
@@ -75,7 +76,7 @@ const Square = (props) => {
     }
     render() {
       const history = this.state.history;
-      const current = history[history.length-1]
+      const current = history[this.state.stepNumber]
       const winner = calculateWinner(current.squares)
       const moves = history.map((step, move) => {
         const desc = move ? 
